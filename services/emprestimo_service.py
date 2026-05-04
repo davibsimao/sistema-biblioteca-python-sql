@@ -16,3 +16,15 @@ class EmprestimoService:
         else:
             print('ERRO: Dados não encontrados no banco de dados.')
             return
+    
+    def listar_emprestimos(self):
+        emprestimos = self.emprestimo_repository.listar_emprestimos()
+        if not emprestimos:
+            print('Não há emprestimos para mostrar')
+            return
+        else:
+            print('-'*40)
+            print(f'{"LISTA DE EMPRESTIMOS".center(40)}')
+            print('-'*40)
+            for emprestimo in emprestimos:
+                print(f'ID emprestimo: {emprestimo[0]} | Livro: {emprestimo[1]} | Leitor: {emprestimo[2]}')

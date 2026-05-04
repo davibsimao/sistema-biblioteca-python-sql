@@ -10,3 +10,17 @@ class LeitorService:
             return
         else:
             self.leitor_repository.inserir_leitor(nome)
+        
+    def listar_leitores(self):
+        leitores = self.leitor_repository.listar_leitor()
+        if not leitores:
+            print('Não há leitor para mostrar')
+            return
+        else:
+            print('-'*40)
+            print(f'{"LISTA DE LEITORES".center(40)}')
+            print('-'*40)
+            for leitor in leitores:
+                print(f'id {leitor[0]} | titulo: {leitor[1]}')
+            print('-'*40)
+        

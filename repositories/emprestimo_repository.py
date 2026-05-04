@@ -13,7 +13,7 @@ class EmprestimoRepository:
     def listar_emprestimos(self):
         cursor = self.conexao.cursor()
         comando = '''
-        SELECT E.IDEMPRESTIMO, LI.TITULO, LE.NOME, E.ID_LIVRO, E.ID_LEITOR 
+        SELECT E.IDEMPRESTIMO,LI.TITULO, LE.NOME, E.ID_LIVRO, E.ID_LEITOR 
         FROM EMPRESTIMOS E
         INNER JOIN LIVROS LI
         ON E.ID_LIVRO = LI.IDLIVRO
