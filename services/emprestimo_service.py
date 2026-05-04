@@ -27,4 +27,18 @@ class EmprestimoService:
             print(f'{"LISTA DE EMPRESTIMOS".center(40)}')
             print('-'*40)
             for emprestimo in emprestimos:
-                print(f'ID emprestimo: {emprestimo[0]} | Livro: {emprestimo[1]} | Leitor: {emprestimo[2]}')
+                print(f'ID emprestimo: {emprestimo[0]} | Livro: {emprestimo[1]} | Leitor: {emprestimo[2]} |  STATUS: {emprestimo[5]}')
+
+    def devolver_livro(self, idemprestimo):
+        emprestimo = self.emprestimo_repository.buscar_emprestimo_id(idemprestimo)
+    
+        if not emprestimo:
+            print('ERRO: ID inválido.')
+            return
+        
+        if emprestimo[3] == 'DEVOLVIDO':  
+            print('Livro já foi devolvido.')
+            return
+
+        self.emprestimo_repository.atualizar_status(idemprestimo)
+        print('Status atualizado com sucesso.')

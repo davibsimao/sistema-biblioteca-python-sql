@@ -15,8 +15,6 @@ class LeitorRepository:
         cursor.execute(comando)
         resultado = cursor.fetchall()
 
-        self.conexao.commit()
-
         return resultado
 
     def buscar_leitor_id(self, idleitor):
@@ -24,7 +22,5 @@ class LeitorRepository:
         comando = 'SELECT IDLEITOR, NOME FROM LEITORES WHERE IDLEITOR = %s'
         cursor.execute(comando, (idleitor,))
         resultado = cursor.fetchone()
-
-        self.conexao.commit()
 
         return resultado

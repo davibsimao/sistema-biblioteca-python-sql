@@ -6,10 +6,15 @@ def menu(livro_service, leitor_service, emprestimo_service):
 4 - Listar livros
 5 - Listar leitores
 6 - Listar empréstimos
+7 - Devolver empréstimo
 0 - Sair
 
-''')
-        opc = int(input('Digite sua opção: '))
+''')    
+        try:
+            opc = int(input('Digite sua opção: '))
+        except ValueError:
+            print('Digite um numero válido.')
+            continue
 
         if opc == 1:
 
@@ -36,10 +41,18 @@ def menu(livro_service, leitor_service, emprestimo_service):
         
         elif opc == 6:
             emprestimo_service.listar_emprestimos()
+        
+        elif opc == 7:
+            id_emprestimo = int(input('ID EMPRESTIMO PARA DEVOLVER: '))
+            emprestimo_service.devolver_livro(id_emprestimo)
+
         elif opc == 0:
+            print('Encerrando... Volte Sempre! ')
             break
 
-        
+        else:
+            print('ERRO: Digite uma opção válida.')
+            continue
 
 
 

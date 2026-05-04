@@ -16,8 +16,6 @@ class LivroRepository:
         cursor.execute(comando)
         resultado = cursor.fetchall()
 
-        self.conexao.commit()
-
         return resultado
     
     def buscar_livro_id (self, idlivro):
@@ -25,7 +23,5 @@ class LivroRepository:
         comando = 'SELECT IDLIVRO, TITULO FROM LIVROS WHERE IDLIVRO = %s'
         cursor.execute(comando, (idlivro,))
         resultado = cursor.fetchone()
-
-        self.conexao.commit()
 
         return resultado
