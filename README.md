@@ -49,22 +49,21 @@ O projeto simula um sistema real de gerenciamento de biblioteca via terminal, co
 
 ---
 
-## 🧱 Estrutura do projeto
+# 📁 Estrutura do projeto
 
 biblioteca/
 ├── main.py
 ├── utils/
-│ └── menu.py
+│   └── menu.py
 ├── services/
-│ ├── livro_service.py
-│ ├── leitor_service.py
-│ └── emprestimo_service.py
+│   ├── livro_service.py
+│   ├── leitor_service.py
+│   └── emprestimo_service.py
 ├── repositories/
-│ ├── livro_repository.py
-│ ├── leitor_repository.py
-│ ├── emprestimo_repository.py
-│ └── conexao.py
-
+│   ├── livro_repository.py
+│   ├── leitor_repository.py
+│   ├── emprestimo_repository.py
+│   └── conexao.py
 ---
 
 ## 📌 Regras do sistema
@@ -91,15 +90,15 @@ Este projeto foi desenvolvido com o objetivo de praticar:
 
 ## 💻 Menu do sistema
 
-1 - Cadastrar livro
-2 - Cadastrar leitor
-3 - Cadastrar empréstimo
-4 - Listar livros
-5 - Listar leitores
-6 - Listar empréstimos
-7 - Devolver empréstimo
-8 - Remover livro
-9 - Remover leitor
+1 - Cadastrar livro  
+2 - Cadastrar leitor  
+3 - Cadastrar empréstimo  
+4 - Listar livros  
+5 - Listar leitores  
+6 - Listar empréstimos  
+7 - Devolver empréstimo  
+8 - Remover livro  
+9 - Remover leitor  
 0 - Sair
 
 ---
