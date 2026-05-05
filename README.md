@@ -49,7 +49,7 @@ O projeto simula um sistema real de gerenciamento de biblioteca via terminal, co
 
 ---
 
-# 📁 Estrutura do projeto
+📁 Estrutura do projeto
 
 biblioteca/
 ├── main.py
