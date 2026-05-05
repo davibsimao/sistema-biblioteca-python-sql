@@ -1,4 +1,5 @@
 from repositories.emprestimo_repository import EmprestimoRepository
+from datetime import datetime
 
 class EmprestimoService:
     def __init__(self, emprestimo_repository, livro_repository, leitor_repository):
@@ -26,8 +27,14 @@ class EmprestimoService:
             print('-'*40)
             print(f'{"LISTA DE EMPRESTIMOS".center(40)}')
             print('-'*40)
-            for emprestimo in emprestimos:
-                print(f'ID emprestimo: {emprestimo[0]} | Livro: {emprestimo[1]} | Leitor: {emprestimo[2]} |  STATUS: {emprestimo[5]}')
+            for emp in emprestimos:
+                data = emp[6]
+                if isinstance(data, str):
+                    data = datetime.strptime(data, '%Y-%m-%d %H:%M:%S')
+
+                data_formatada = data.strftime('%d/%m/%Y %H:%M')
+
+                print(f'ID: {emp[0]} | Livro: {emp[1]} | Leitor: {emp[2]} | Status: {emp[5]} | Data: {data_formatada}')
 
     def devolver_livro(self, idemprestimo):
         emprestimo = self.emprestimo_repository.buscar_emprestimo_id(idemprestimo)

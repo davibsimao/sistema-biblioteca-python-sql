@@ -25,3 +25,26 @@ class LivroRepository:
         resultado = cursor.fetchone()
 
         return resultado
+    
+    def listar_livros_disponiveis(self):
+        cursor = self.conexao.cursor()
+        comando = "SELECT IDLIVRO, TITULO FROM LIVROS WHERE IDLIVRO NOT IN (SELECT ID_LIVRO FROM EMPRESTIMOS WHERE STATUS = 'ATIVO')"
+        cursor.execute(comando)
+        resultado = cursor.fetchall()
+
+        return resultado
+    
+    def deletar_livro(self, idlivro):
+        cursor = self.conexao.cursor()
+        comando = 'DELETE FROM LIVROS WHERE IDLIVRO = %s'
+        cursor.execute(comando,(idlivro,))
+
+        deletou = cursor.rowcount
+
+        self.conexao.commit()
+
+        return deletou > 0
+    
+
+
+        

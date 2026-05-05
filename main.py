@@ -18,8 +18,8 @@ livro_repository = LivroRepository(conexao_criada)
 leitor_repository = LeitorRepository(conexao_criada)
 emprestimo_repository = EmprestimoRepository(conexao_criada)
 
-livro_service = LivroService(livro_repository)
-leitor_service = LeitorService(leitor_repository)
+livro_service = LivroService(livro_repository, emprestimo_repository)
+leitor_service = LeitorService(leitor_repository, emprestimo_repository)
 emprestimo_service = EmprestimoService(emprestimo_repository, livro_repository, leitor_repository)
 
 menu(livro_service, leitor_service, emprestimo_service)
