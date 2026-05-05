@@ -51,6 +51,7 @@ O projeto simula um sistema real de gerenciamento de biblioteca via terminal, co
 
 📁 Estrutura do projeto
 
+```txt
 biblioteca/
 ├── main.py
 ├── utils/
@@ -64,7 +65,9 @@ biblioteca/
 │   ├── leitor_repository.py
 │   ├── emprestimo_repository.py
 │   └── conexao.py
----
+```
+
+
 
 ## 📌 Regras do sistema
 
